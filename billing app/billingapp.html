@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BILLING APPLICATION</title>
+    <link rel="stylesheet" href="billingapp.css">
+</head>
+<body>
+  <form action="calculate_bill.php" method="POST">
+  <label for="email">Customer Email:</label>
+  <input type="email" id="email" name="email" required>
+  <br><br>
+  <fieldset>
+    <legend>Products:</legend>
+    <div id="products">
+      <div class="product">
+        <label for="product1">Product 1 ID:</label>
+        <input type="text" id="product1" name="products[1][id]" required>
+        <label for="quantity1">Quantity:</label>
+        <input type="number" id="quantity1" name="products[1][quantity]" required>
+      </div>
+    </div>
+    <button type="button" id="addProduct">Add New</button>
+  </fieldset>
+   <br><br>
+  <fieldset>
+    <legend>Denominations:</legend>
+    
+    <label><input type="checkbox" name="denominations[]" value="1"> $1</label>
+  <label><input type="checkbox" name="denominations[]" value="5"> $5</label>
+  <label><input type="checkbox" name="denominations[]" value="10"> $10</label>
+  <label><input type="checkbox" name="denominations[]" value="20"> $20</label>
+  <label><input type="checkbox" name="denominations[]" value="50"> $50</label>
+  <label><input type="checkbox" name="denominations[]" value="100"> $100</label>
+  </fieldset>
+   <br>
+   <br>
+  <label for="amount">Amount Paid:</label>
+  <input type="number" id="amount" name="amount" required>
+   <br>
+   <br>
+  <button type="submit" id="generate-bill-btn">Generate Bill</button>
+</form>
+
+<script src="billingapp.js"></script>
+
+</body>
+</html>
